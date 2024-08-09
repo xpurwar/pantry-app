@@ -1,95 +1,67 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import { Box, Stack, Typography, Button, Modal, TextField } from '@mui/material';
+import { firestore } from "../firebase";
+import {
+  collection,
+  doc,
+  getDocs,
+  query,
+  setDoc,
+  deleteDoc,
+  getDoc,
+} from 'firebase/firestore'
+
+
+const item = ["tomato", "potato", "onion", "garlic", "brown bread", "spring onion", "milk", "butter", "ghee", "flour", "atta"]
 
 export default function Home() {
+  useEffect(() => {
+    const items = collection(firestore, 'pantry')
+    console.log(items.docs)
+  }, [])
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <Box
+      width="100vw"
+      height="100vh"
+      //bgcolor="#E9EDDE"
+      display={'flex'}
+      justifyContent={'center'}
+      flexDirection={'column'}
+      alignItems={'center'}
+    >
+      <Box border={'2px solid #4C5752'}>
+      <Box width="800px" height="100px" bgcolor="#E9EDDE" display={'flex'} justifyContent={'center'}>
+        <Typography variant="h2" color={'#4C5752'} textAlign={'center'}>
+                Pantry AI
+        </Typography>
+      </Box>
+
+
+      <Stack width="800px" height="200px" spacing={2} overflow="auto">
+        {item.map((i) => (
+          <Box
+            key={i}
+            width="100%"
+            height="100px"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            bgcolor="#E9EDDE"
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+            <Typography
+              variant={'h5'}
+              color={'#4C5752'}
+              textAlign={'center'}
+              //fontWeight={'bold'}
+            >
+            {i.charAt(0).toUpperCase() + i.slice(1)}
+            </Typography>
+          </Box>
+        ))}
+      </Stack>
+    </Box>
+    </Box>
+  )
 }
