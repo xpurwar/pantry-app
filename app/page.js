@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Stack, Typography, Button, Modal, TextField } from '@mui/material';
-import { firestore } from "../firebase";
+import { firestore } from "./firebase";
 import {
   collection,
   doc,
@@ -11,7 +11,6 @@ import {
   deleteDoc,
   getDoc,
 } from 'firebase/firestore'
-
 
 const item = ["tomato", "potato", "onion", "garlic", "brown bread", "spring onion", "milk", "butter", "ghee", "flour", "atta"]
 
