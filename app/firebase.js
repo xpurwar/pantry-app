@@ -6,12 +6,12 @@ import { getFirestore } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBPk_xD5GJ4-JTFBDLL0J8SpzUVrhGSE5c",
-  authDomain: "hspantry-fc111.firebaseapp.com",
-  projectId: "hspantry-fc111",
-  storageBucket: "hspantry-fc111.appspot.com",
-  messagingSenderId: "84337343314",
-  appId: "1:84337343314:web:28c4fdeb6c9ca24108988b"
+  apiKey: "AIzaSyBEPZAgIR1kaP4t3OsB6FiQ7oRTgQdZY-A",
+  authDomain: "pantryapp-297c7.firebaseapp.com",
+  projectId: "pantryapp-297c7",
+  storageBucket: "pantryapp-297c7.appspot.com",
+  messagingSenderId: "95970325247",
+  appId: "1:95970325247:web:2b00d522a75b34884752ca"
 };
 
 // Initialize Firebase
