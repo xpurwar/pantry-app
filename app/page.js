@@ -202,16 +202,16 @@ export default function Home() {
       <Button variant="contained" onClick={handleOpen}>
         Add New Item
       </Button>
-      <Box border={'1px solid #333'}>
+      <Box border={'1px solid #4C5752'}>
         <Box
           width="800px"
           height="100px"
-          bgcolor={'#ADD8E6'}
+          bgcolor={'#B9BAA3'}
           display={'flex'}
           justifyContent={'center'}
           alignItems={'center'}
         >
-          <Typography variant={'h2'} color={'#333'} textAlign={'center'}>
+          <Typography variant={'h2'} color={'#4C5752'} textAlign={'center'}>
             Inventory Items
           </Typography>
         </Box>
@@ -224,13 +224,13 @@ export default function Home() {
               display={'flex'}
               justifyContent={'space-between'}
               alignItems={'center'}
-              bgcolor={'#f0f0f0'}
+              bgcolor={'#E9EDDE'}
               paddingX={5}
             >
-              <Typography variant={'h4'} color={'#333'} textAlign={'center'}>
+              <Typography variant={'h4'} color={'#4C5752'} textAlign={'center'}>
                 {name.charAt(0).toUpperCase() + name.slice(1)}
               </Typography>
-              <Typography variant={'h3'} color={'#333'} textAlign={'center'}>
+              <Typography variant={'h5'} color={'#4C5752'} textAlign={'center'}>
                 Quantity: {quantity}
               </Typography>
               <Button variant="contained" onClick={() => removeItem(name)}>
