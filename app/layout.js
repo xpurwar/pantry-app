@@ -22,8 +22,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Pantry Items",
-  description: "Kevin Zhang",
+  title: "Pantry App",
+  description: "Ananya Purwar",
 };
 
 export default function RootLayout({ children }) {
